@@ -21,14 +21,15 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
+          <div className="bg-white px-4 py-2 rounded-xl">
           <motion.a
             href="#home"
             className="text-2xl font-bold gradient-text"
             whileHover={{ scale: 1.05 }}
           >
-            Muneeb
+            Muneeb<span className="text-black font-semibold">.dev</span>
           </motion.a>
-
+          </div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
