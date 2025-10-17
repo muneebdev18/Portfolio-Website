@@ -65,7 +65,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ["all", "frontend", "fullstack"];
+  const categories = ["all", "websites", "dashboards"];
 
   const filteredProjects =
     filter === "all" ? projects : projects.filter((p) => p.category === filter);

@@ -89,7 +89,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
               >
-                3 years of expertise
+                2+ years of expertise
               </motion.span> in React, JavaScript, and modern web technologies.
             </motion.p>
 
@@ -131,9 +131,9 @@ const Hero = () => {
               transition={{ delay: 1.3, staggerChildren: 0.1 }}
             >
               {[
-                { icon: Github, href: "https://github.com" },
-                { icon: Linkedin, href: "https://linkedin.com" },
-                { icon: Mail, href: "mailto:muneeb@example.com" }
+                { icon: Github, href: "https://github.com/muneebdev18" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/muhammad-muneeb-a06b4b22a/" },
+                { icon: Mail, href: "mailto:muneebdev18@gmail.com" }
               ].map((social, index) => (
                 <motion.a
                   key={index}

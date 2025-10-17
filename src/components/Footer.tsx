@@ -19,7 +19,7 @@ const Footer = () => {
             className="flex gap-6"
           >
             <motion.a
-              href="https://github.com"
+              href="https://github.com/muneebdev18"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 glass-card rounded-full hover:bg-primary/20 transition-colors"
@@ -28,7 +28,7 @@ const Footer = () => {
               <Github className="w-5 h-5" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/muhammad-muneeb-a06b4b22a/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 glass-card rounded-full hover:bg-primary/20 transition-colors"
@@ -37,7 +37,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </motion.a>
             <motion.a
-              href="mailto:muneeb@example.com"
+              href="mailto:muneebdev18@gmail.com"
               className="p-3 glass-card rounded-full hover:bg-primary/20 transition-colors"
               whileHover={{ y: -5 }}
             >
@@ -52,8 +52,8 @@ const Footer = () => {
             transition={{ delay: 0.2 }}
             className="text-center"
           >
-            <p className="text-muted-foreground flex items-center gap-2">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by{" "}
+            <p className="text-muted-foreground text-center gap-2">
+              Made by{" "}
               <span className="gradient-text font-semibold">Muneeb</span>
             </p>
             <p className="text-sm text-muted-foreground/60 mt-2">

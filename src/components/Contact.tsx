@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -19,19 +20,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "muneeb@example.com",
-      href: "mailto:muneeb@example.com",
+      value: "muneebdev18@gmail.com",
+      href: "mailto:muneebdev18@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      value: "+92 306 2953623",
+      href: "tel:+923062953623",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
+      value: "Karachi, Pakistan",
       href: "#",
     },
   ];
@@ -167,7 +168,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                  placeholder="your.email@example.com"
+                  placeholder="email@example.com"
                 />
               </div>
 
@@ -205,6 +206,19 @@ const Contact = () => {
               </motion.button>
             </form>
           </motion.div>
+        </div>
+        <div className="py-20 flex justify-center items-center flex-col gap-8">
+          <h2 className="text-accent text-3xl font-bold">Who I Am on Paper. Get My CV</h2>
+          <div className="flex justify-center items-center">
+          <Link
+  to="https://drive.google.com/file/d/1Zfpxyl2OY87X7_C2DWjAMI0_v-jlal_f/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="px-4 w-40 text-center py-4  text-accent font-bold bg-secondary rounded-md hover:bg-gray-800"
+>
+  View CV
+</Link>
+          </div>
         </div>
       </div>
     </section>

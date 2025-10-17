@@ -2,7 +2,15 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code2, Layout, Server, Smartphone, Database, Wrench } from "lucide-react";
-
+import Bootstrap from '../assets/tech-icons/Bootstrap.png'
+import Git from '../assets/tech-icons/Git.png'
+import Js from '../assets/tech-icons/js.png'
+import MongoDB from '../assets/tech-icons/mongodb.png'
+import Next from '../assets/tech-icons/nextjs.png'
+import Node from '../assets/tech-icons/nodejs.png'
+import React from '../assets/tech-icons/react.png'
+import Redux from '../assets/tech-icons/redux.png'
+import Tailwind from '../assets/tech-icons/tailwind.png'
 const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -11,41 +19,88 @@ const Skills = () => {
     {
       icon: Layout,
       title: "Frontend Development",
-      description: "Building responsive, accessible interfaces with React, TypeScript, and modern CSS",
-      skills: ["React.js", "TypeScript", "Tailwind CSS", "Next.js"],
+      description: "Building responsive, accessible interfaces with React, Javascript, and modern CSS",
+      skills: ["React.js", "Javascript", "Tailwind CSS", "Next.js"],
     },
     {
       icon: Server,
       title: "Backend Development",
       description: "Creating robust server-side applications and RESTful APIs",
-      skills: ["Node.js", "Express", "PostgreSQL", "MongoDB"],
+      skills: ["Node.js", "Express", "MongoDB", "Rest API's"],
     },
     {
       icon: Code2,
       title: "UI/UX Implementation",
       description: "Translating designs into pixel-perfect, animated user experiences",
-      skills: ["Framer Motion", "GSAP", "CSS Animations", "Figma"],
+      skills: ["Framer Motion", "CSS Animations", "Figma"],
     },
     {
       icon: Smartphone,
       title: "Mobile-First Design",
       description: "Ensuring flawless experiences across all devices and screen sizes",
-      skills: ["Responsive Design", "PWA", "Mobile Optimization"],
+      skills: ["Responsive Design", "Mobile Optimization"],
     },
     {
       icon: Database,
       title: "State Management",
       description: "Implementing efficient data flow and application state control",
-      skills: ["Redux", "Context API", "React Query", "Zustand"],
+      skills: ["Redux", "Redux Toolkit", "SWR", "React Query"],
     },
     {
       icon: Wrench,
       title: "Performance Optimization",
       description: "Enhancing speed, SEO, and overall application performance",
-      skills: ["Lighthouse", "Code Splitting", "Lazy Loading", "SEO"],
+      skills: ["Code Splitting", "Lazy Loading", "SEO"],
     },
   ];
 
+  const techIcons = [
+    {
+      id:1,
+      name: "React.js",
+      img:React
+    },
+    {
+      id:2,
+      name: "Next.js",
+      img:Next
+    },
+    {
+      id:3,
+      name: "JavaScript",
+      img:Js
+    },
+    {
+      id:4,
+      name: "Node.js",
+      img:Node
+    },
+    {
+      id:5,
+      name: "Tailwind CSS",
+      img:Tailwind
+    },
+    // {
+    //   id:6,
+    //   name: "Bootstrap",
+    //   img:Bootstrap
+    // },
+    {
+      id:7,
+      name: "MongoDB",
+      img:MongoDB
+    },
+    {
+      id:8,
+      name: "Redux",
+      img:Redux
+    },
+    {
+      id:9,
+      name: "Git",
+      img:Git
+    }
+  ]
   return (
     <section id="skills" className="py-20 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -129,18 +184,9 @@ const Skills = () => {
             Tech Stack
           </motion.h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              "React.js",
-              "JavaScript",
-              "TypeScript",
-              "Node.js",
-              "Tailwind CSS",
-              "PostgreSQL",
-              "Git",
-              "AWS",
-            ].map((tech, index) => (
+            {techIcons?.map((tech, index) => (
               <motion.div
-                key={tech}
+                key={tech?.id}
                 initial={{ opacity: 0, scale: 0.5, rotateY: 90 }}
                 animate={isInView ? { opacity: 1, scale: 1, rotateY: 0 } : {}}
                 transition={{ 
@@ -155,9 +201,10 @@ const Skills = () => {
                   backgroundColor: "hsl(var(--secondary))",
                   transition: { duration: 0.2 }
                 }}
-                className="text-center p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors cursor-default"
+                className="flex justify-center flex-col items-center p-4 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors cursor-default"
               >
-                <p className="font-semibold">{tech}</p>
+                <img src={tech.img} alt={tech.name} className="w-[70px] h-[70px] object-cover"/>
+                <p className="font-semibold">{tech.name}</p>
               </motion.div>
             ))}
           </div>

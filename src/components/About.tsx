@@ -9,21 +9,21 @@ const About = () => {
 
   const milestones = [
     {
-      year: "2022 - Present",
-      title: "Senior Web Developer",
+      year: "2025 - Present",
+      title: "Frontend React Developer",
       description: "Leading frontend development for enterprise applications",
       icon: Rocket,
     },
     {
-      year: "2021 - 2022",
-      title: "React Developer",
+      year: "2023 - 2025",
+      title: "Junior React/MERN Developer",
       description: "Built responsive web applications for diverse clients",
       icon: Code2,
     },
     {
-      year: "2021",
-      title: "Started Journey",
-      description: "Began professional web development career",
+      year: "2023",
+      title: "React Js Internship",
+      description: "Began professional Web Development career",
       icon: Award,
     },
   ];
@@ -59,12 +59,11 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold mb-4 gradient-text">My Journey</h3>
             <p className="text-foreground/80 leading-relaxed mb-4">
-              With <span className="text-primary font-semibold">3 years of hands-on experience</span> in web development, 
-              I've had the privilege of working on diverse projects ranging from startups to enterprise applications.
+              With <span className="text-primary font-semibold">2 years of hands-on experience</span> in web development, 
+              I’ve had the privilege of working on diverse projects from startup websites to full-scale enterprise applications.
             </p>
             <p className="text-foreground/80 leading-relaxed mb-4">
-              I specialize in building modern, responsive web applications using React.js, JavaScript, and cutting-edge 
-              technologies. My focus is always on creating seamless user experiences backed by clean, maintainable code.
+            I specialize in building modern, responsive web applications using <span className="text-accent">React.js</span> and <span className="text-accent">JavaScript</span>, with a strong focus on creating seamless user experiences backed by clean, maintainable code. Alongside my front-end expertise, I’ve developed numerous backend APIs and CRUD operations using <span className="text-accent">Node.js</span>, <span className="text-accent">Express.js</span>, and <span className="text-accent">MongoDB</span>, ensuring smooth communication between client and server for dynamic, data-driven apps.
             </p>
             <p className="text-foreground/80 leading-relaxed">
               When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, 
@@ -121,11 +120,11 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6"
         >
           {[
-            { number: "3+", label: "Years Experience" },
-            { number: "50+", label: "Projects Completed" },
+            { number: "2+", label: "Years Experience" },
+            // { number: "1+", label: "Projects Completed" },
             { number: "30+", label: "Happy Clients" },
             { number: "100%", label: "Satisfaction Rate" },
           ].map((stat, index) => (
