@@ -124,23 +124,23 @@ const Projects = () => {
                 delay: index * 0.1,
                 ease: [0.22, 1, 0.36, 1]
               }}
-              whileHover={{ 
-                y: -10,
-                scale: 1.02,
-                transition: { duration: 0.3 }
-              }}
-              className="glass-card rounded-xl overflow-hidden group hover:bg-card/80 transition-all"
+              // whileHover={{ 
+              //   y: -10,
+              //   scale: 1.02,
+              //   transition: { duration: 0.3 }
+              // }}
+              className="glass-card rounded-xl overflow-hidden group  transition-all"
             >
               <div className="relative overflow-hidden">
                 <motion.img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
+                  // whileHover={{ scale: 1.1 }}
+                  // transition={{ duration: 0.5 }}
                 />
                 <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent flex items-end justify-center gap-4 pb-4"
+                  className="absolute flex items-end justify-center gap-4 pb-4"
                   initial={{ opacity: 0 }}
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -149,9 +149,9 @@ const Projects = () => {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-primary hover:bg-primary/80 transition-colors"
-                    initial={{ y: 20, opacity: 0 }}
-                    whileHover={{ scale: 1.1, y: 0, opacity: 1 }}
+                    className="p-2 rounded-full bg-primary  transition-colors"
+                    // initial={{ y: 20, opacity: 0 }}
+                    // whileHover={{ scale: 1.1, y: 0, opacity: 1 }}
                     transition={{ delay: 0.1 }}
                   >
                     <ExternalLink className="w-5 h-5 text-primary-foreground" />
@@ -170,15 +170,15 @@ const Projects = () => {
                 </motion.div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold mb-2 gradient-text transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                <p className="text-foreground text-sm mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/20"
+                      className="px-3 py-1 text-xs font-medium rounded-full bg-primary/40 text-white border border-primary/20"
                     >
                       {tech}
                     </span>
