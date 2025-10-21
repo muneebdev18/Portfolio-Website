@@ -7,8 +7,25 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { FaWhatsapp } from "react-icons/fa";
 import SkillsNew from "@/components/SkillsNew";
+import Lenis from 'lenis'
 
 const Index = () => {
+  const lenis = new Lenis({
+    autoRaf: true,
+  });
+  lenis.on('scroll', (e) => {
+    console.log(e);
+  });
+
+  // Second Option for Scrolling Effect
+//   const lenis = new Lenis();
+// // Use requestAnimationFrame to continuously update the scroll
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+
+// requestAnimationFrame(raf);
   return (
     <div className="min-h-screen">
       <Header />

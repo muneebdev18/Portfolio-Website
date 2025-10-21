@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
-
+import Catholic from '../assets/projects/Catholic.png'
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -10,12 +10,12 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration",
+      title: "Catholic Grapevine",
+      description: "Full-stack solution with React, Node.js, and Stripe integration",
       category: "fullstack",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-      link: "#",
+      tech: ["React", "Node.js", "MongoDB", "Tailwind"],
+      image: Catholic,
+      link: "https://thecatholicgrapevine.com/",
       github: "#",
     },
     {
@@ -115,77 +115,83 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1]
-              }}
-              // whileHover={{ 
-              //   y: -10,
-              //   scale: 1.02,
-              //   transition: { duration: 0.3 }
-              // }}
-              className="glass-card rounded-xl overflow-hidden group  transition-all"
-            >
-              <div className="relative overflow-hidden">
-                <motion.img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                  // whileHover={{ scale: 1.1 }}
-                  // transition={{ duration: 0.5 }}
-                />
-                <motion.div 
-                  className="absolute flex items-end justify-center gap-4 pb-4"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-primary  transition-colors"
-                    // initial={{ y: 20, opacity: 0 }}
-                    // whileHover={{ scale: 1.1, y: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <ExternalLink className="w-5 h-5 text-primary-foreground" />
-                  </motion.a>
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 rounded-full bg-primary hover:bg-primary/80 transition-colors"
-                    initial={{ y: 20, opacity: 0 }}
-                    whileHover={{ scale: 1.1, y: 0, opacity: 1 }}
-                    transition={{ delay: 0.15 }}
-                  >
-                    <Github className="w-5 h-5 text-primary-foreground" />
-                  </motion.a>
-                </motion.div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2 gradient-text transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-foreground text-sm mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs font-medium rounded-full bg-primary/40 text-white border border-primary/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+         <motion.div
+         key={project.title}
+         initial={{ opacity: 0, y: 50, scale: 0.9 }}
+         animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+         transition={{
+           duration: 0.6,
+           delay: index * 0.1,
+           ease: [0.22, 1, 0.36, 1],
+         }}
+         className="relative bg-gradient-to-b from-white/10 to-white/5 
+                    backdrop-blur-xl border border-white/10 
+                    rounded-2xl shadow-[0_0_25px_rgba(255,255,255,0.05)]
+                    overflow-hidden group hover:scale-[1.02] 
+                    transition-all duration-500 hover:border-white/20"
+       >
+         {/* Image Section */}
+         <div className="relative overflow-hidden">
+           <motion.img
+             src={project.image}
+             alt={project.title}
+             className="w-full h-52 object-cover rounded-t-2xl transition-transform duration-700 group-hover:scale-110"
+           />
+       
+           {/* Overlay Buttons */}
+           <motion.div
+             className="absolute inset-0 flex items-center justify-center gap-4 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+             initial={{ opacity: 0 }}
+             whileHover={{ opacity: 1 }}
+           >
+             <motion.a
+               href={project.link}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 transition-all shadow-lg shadow-blue-500/30"
+             >
+               <ExternalLink className="w-5 h-5 text-white" />
+             </motion.a>
+             <motion.a
+               href={project.github}
+               target="_blank"
+               rel="noopener noreferrer"
+               className="p-3 rounded-full bg-gradient-to-r from-gray-700 to-gray-900 hover:opacity-90 transition-all shadow-lg shadow-gray-800/40"
+             >
+               <Github className="w-5 h-5 text-white" />
+             </motion.a>
+           </motion.div>
+         </div>
+       
+         {/* Content Section */}
+         <div className="p-6">
+           <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">
+             {project.title}
+           </h3>
+           <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+             {project.description}
+           </p>
+       
+           <div className="flex flex-wrap gap-2">
+             {project.tech.map((tech) => (
+               <span
+                 key={tech}
+                 className="px-3 py-1 text-xs rounded-full 
+                            text-accent font-bold border border-white/20 
+                            bg-primary/10
+                            backdrop-blur-sm hover:bg-white/20 transition-colors
+                            cursor-pointer"
+               >
+                 {tech}
+               </span>
+             ))}
+           </div>
+         </div>
+       
+         {/* Glow Border Effect */}
+         <div className="absolute inset-0 rounded-2xl pointer-events-none border border-transparent group-hover:border-blue-500/30 transition-all duration-500"></div>
+       </motion.div>
+       
           ))}
         </div>
       </div>
