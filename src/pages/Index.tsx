@@ -14,7 +14,7 @@ const Index = () => {
     autoRaf: true,
   });
   lenis.on('scroll', (e) => {
-    console.log(e);
+    // console.log(e);
   });
 
   // Second Option for Scrolling Effect

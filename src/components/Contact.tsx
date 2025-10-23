@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
-
+import {supabase} from '../config/supabaseClient.js'
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -44,21 +44,32 @@ const Contact = () => {
     // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-
+    const {error}  = await supabase.from('contacts').insert([
+      {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }
+    ]);
+    if(error){
+      console.error("Error in Sending Error",error)
+      toast({
+        title: "Not Send! Something went wrong.",
+        description: "Please Try Again.",
+      });
+    }
+    else{
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      console.log("Message sent successfully!")
     setFormData({ name: "", email: "", message: "" });
     setIsSubmitting(false);
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+
 
   return (
     <section id="contact" className="py-20 md:py-32 relative overflow-hidden">
@@ -149,7 +160,7 @@ const Contact = () => {
                   id="name"
                   name="name"
                   value={formData.name}
-                  onChange={handleChange}
+                  onChange={(e)=>setFormData({...formData,name:e.target.value})}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                   placeholder="Your name"
@@ -165,7 +176,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   value={formData.email}
-                  onChange={handleChange}
+                  onChange={(e)=>setFormData({...formData,email:e.target.value})}
                   required
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                   placeholder="email@example.com"
@@ -180,7 +191,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   value={formData.message}
-                  onChange={handleChange}
+                  onChange={(e)=>setFormData({...formData,message:e.target.value})}
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
