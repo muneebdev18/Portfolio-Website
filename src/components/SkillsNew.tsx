@@ -11,7 +11,7 @@ import {
     SiJavascript,
     SiGithub,
 } from "react-icons/si";
-import Git from '../assets/tech-icons/Git.png'
+import WP from '../assets/tech-icons/wordpress.png'
 import Js from '../assets/tech-icons/js.png'
 import MongoDB from '../assets/tech-icons/mongodb.png'
 import Next from '../assets/tech-icons/nextjs.png'
@@ -22,12 +22,12 @@ import Tailwind from '../assets/tech-icons/tailwind.png'
 const skills = [
     { name: "React", category: "Frontend", level: 90, icon: <img className="w-7" src={React}/> },
     { name: "Next Js", category: "Full Stack", level: 85, icon: <img className="w-7" src={Next}/> },
-    { name: "Node.js", category: "Backend", level: 60, icon: <img className="w-7" src={Node}/> },
+    { name: "Node.js", category: "Backend", level: 75, icon: <img className="w-7" src={Node}/> },
     { name: "Javascript", category: "Language", level: 80, icon: <img className="w-7" src={Js}/> },
     { name: "Tailwind CSS", category: "Frontend", level: 80, icon: <img className="w-7" src={Tailwind}/> },
     { name: "Redux", category: "State Management", level: 90, icon: <img className="w-7" src={Redux}/> },
     { name: "MongoDB", category: "Database", level: 60, icon: <img className="w-7" src={MongoDB}/> },
-    { name: "Github", category: "DevOps", level: 80, icon: <img className="w-7" src={Git}/> },
+    { name: "Wordpress", category: "CMS", level: 80, icon: <img className="w-7" src={WP}/> },
 ];
 
 const SkillsNew = () => {

@@ -218,7 +218,7 @@ const Contact = () => {
             </form>
           </motion.div>
         </div>
-        <div className="py-20 flex justify-center items-center flex-col gap-8">
+        {/* <div className="py-20 flex justify-center items-center flex-col gap-8">
           <h2 className="text-accent text-3xl font-bold">Who I Am on Paper. Get My CV</h2>
           <div className="flex justify-center items-center">
           <Link
@@ -230,7 +230,7 @@ const Contact = () => {
   View CV
 </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

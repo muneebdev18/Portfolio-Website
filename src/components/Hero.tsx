@@ -89,7 +89,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
               >
-                2+ years of expertise
+                4+ years of expertise
               </motion.span> in React, JavaScript, and modern web technologies.
             </motion.p>
 

@@ -3,6 +3,18 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import Catholic from '../assets/projects/Catholic.png'
+import JB from '../assets/projects/journeybeyond.png'
+import Terramer from '../assets/projects/terramer.png'
+import Elitecare from '../assets/projects/elitecare.png'
+import ZagerM from '../assets/projects/zmarketing.png'
+import Bistro from '../assets/projects/bistro.png'
+import Lugg from '../assets/projects/lugg-dashboard.png'
+import Split from '../assets/projects/split.png'
+import AstraCMS from '../assets/projects/split.png'
+import LightHouseCMS from '../assets/projects/lighthouse.png'
+import BerginCMS from '../assets/projects/berginn.png'
+import PersonarCMS from '../assets/projects/personnar.png'
+import WordrushCMS from '../assets/projects/wordrush.png'
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -10,59 +22,87 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Catholic Grapevine",
-      description: "Full-stack solution with React, Node.js, and Stripe integration",
-      category: "fullstack",
-      tech: ["React", "Node.js", "MongoDB", "Tailwind"],
-      image: Catholic,
+      title: "Elite Care Health",
+      description: "Advanced skincare solutions designed to nourish, protect, and enhance your skin",
+      category: "websites",
+      tech: ["React", "Node.js", "MongoDB", "Tailwind", "Express","Redux"],
+      image: Elitecare,
       link: "https://thecatholicgrapevine.com/",
       github: "#",
     },
     {
-      title: "Task Management App",
-      description: "Real-time collaborative task manager with drag-and-drop functionality",
-      category: "frontend",
-      tech: ["React", "TypeScript", "Tailwind", "Firebase"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+      title: "Journey Beyond",
+      description: "A modern Web3 platform showcasing interactive design, innovation, and decentralized technology.",
+      category: "websites",
+      tech: ["React", "Javascript", "Bootstrap", "Tailwind"],
+      image:JB,
       link: "#",
       github: "#",
     },
     {
-      title: "Weather Dashboard",
-      description: "Interactive weather forecast application with beautiful UI animations",
-      category: "frontend",
-      tech: ["React", "API Integration", "Framer Motion"],
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
+      title: "Catholic Grapevine",
+      description: "A community platform connecting and empowering Catholic entrepreneurs, agencies, and communities.",
+      category: "websites",
+      tech: ["React","Tailwind", "MongoDB","Redux", "Express"],
+      image: Catholic,
       link: "#",
       github: "#",
     },
     {
-      title: "Social Media Analytics",
-      description: "Dashboard for tracking social media metrics and engagement",
-      category: "fullstack",
-      tech: ["React", "D3.js", "Express", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      title: "The Split Dashboard",
+      description: "A complete dashboard for property management, user profiles, notifications, and control",
+      category: "dashboards",
+      tech: ["React","Chart.js", "Redux", "Tailwind","Express.js"],
+      image: Split,
       link: "#",
       github: "#",
     },
     {
-      title: "Portfolio CMS",
-      description: "Headless CMS for managing portfolio content with modern UI",
-      category: "fullstack",
-      tech: ["React", "Next.js", "Prisma", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1555421689-d68471e189f2?w=800&h=600&fit=crop",
+      title: "Lugg Admin Panel",
+      description: "A complete dashboard for Luggage management, user profiles, notifications, and all control",
+      category: "dashboards",
+      tech: ["React","Chart.js", "Redux", "Tailwind","Express.js"],
+      image: Lugg,
       link: "#",
       github: "#",
     },
     {
-      title: "Fitness Tracker",
-      description: "Mobile-responsive fitness tracking app with workout plans",
-      category: "frontend",
-      tech: ["React", "PWA", "Chart.js"],
-      image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop",
+      title: "Zarger Marketing",
+      description: "A modern digital agency website showcasing services, portfolio, branding, and creativity",
+      category: "websites",
+      tech: ["React", "Javascript", "Bootstrap", "Tailwind"],
+      image: ZagerM,
       link: "#",
       github: "#",
     },
+    {
+      title: "Terramer",
+      description: "A bioplastic technology website showcasing sustainable hemp-based polymers and innovation",
+      category: "websites",
+      tech: ["React", "Bootstrap","GSAP", "Redux"],
+      image: Terramer,
+      link: "#",
+      github: "#",
+    },
+    {
+      title: "Bistro Restaurant",
+      description: "A modern, elegant wine bar website with menu, reservations, and events.",
+      category: "websites",
+      tech: ["HTML", "CSS3","Bootstrap","PHP", "Redux"],
+      image: Bistro,
+      link: "#",
+      github: "#",
+    },
+    {
+      title: "Word Rush",
+      description: "An AI-powered platform turning worksheets into fun, interactive learning games",
+      category: "websites",
+      tech: ["Wordpress", "Javascript", "HTML","jQuery", "CSS3"],
+      image: WordrushCMS,
+      link: "#",
+      github: "#",
+    },
+
   ];
 
   const categories = ["all", "websites", "dashboards"];
@@ -139,7 +179,7 @@ const Projects = () => {
            />
        
            {/* Overlay Buttons */}
-           <motion.div
+           {/* <motion.div
              className="absolute inset-0 flex items-center justify-center gap-4 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
              initial={{ opacity: 0 }}
              whileHover={{ opacity: 1 }}
@@ -160,7 +200,7 @@ const Projects = () => {
              >
                <Github className="w-5 h-5 text-white" />
              </motion.a>
-           </motion.div>
+           </motion.div> */}
          </div>
        
          {/* Content Section */}

@@ -10,19 +10,19 @@ const About = () => {
   const milestones = [
     {
       year: "2025 - Present",
-      title: "Frontend React Developer",
+      title: "Lead MERN Engineer",
       description: "Leading frontend development for enterprise applications",
       icon: Rocket,
     },
     {
       year: "2023 - 2025",
-      title: "Junior React/MERN Developer",
+      title: "MERN Engineer",
       description: "Built responsive web applications for diverse clients",
       icon: Code2,
     },
     {
-      year: "2023",
-      title: "React Js Internship",
+      year: "2022",
+      title: "Junior React Js Developer",
       description: "Began professional Web Development career",
       icon: Award,
     },
@@ -59,7 +59,7 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold mb-4 gradient-text">My Journey</h3>
             <p className="text-foreground/80 leading-relaxed mb-4">
-              With <span className="text-primary font-semibold">2 years of hands-on experience</span> in web development, 
+              With <span className="text-primary font-semibold">4 years of hands-on experience</span> in web development, 
               I’ve had the privilege of working on diverse projects from startup websites to full-scale enterprise applications.
             </p>
             <p className="text-foreground/80 leading-relaxed mb-4">
@@ -123,9 +123,9 @@ const About = () => {
           className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6"
         >
           {[
-            { number: "2+", label: "Years Experience" },
+            { number: "4+", label: "Years Experience" },
             // { number: "1+", label: "Projects Completed" },
-            { number: "30+", label: "Happy Clients" },
+            { number: "60+", label: "Happy Clients" },
             { number: "100%", label: "Satisfaction Rate" },
           ].map((stat, index) => (
             <motion.div 
